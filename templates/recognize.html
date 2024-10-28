@@ -1,0 +1,86 @@
+<!-- templates/recognize.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdentityX - Recognize</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #4CAF50 !important;
+        }
+        .container {
+            margin-top: 5vh;
+        }
+        .video-container {
+            margin-top: 20px;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s ease-in-out;
+            display: none;  /* Initially hidden */
+        }
+        .card.show {
+            display: block;
+        }
+        .card-header {
+            background-color: #4CAF50;
+            color: white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">IdentityX</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Live Face Recognition Section -->
+    <div class="container text-center">
+        <h2 class="mt-5">Live Face Recognition</h2>
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" alt="Live video feed" class="img-fluid border border-secondary rounded" width="400">
+        </div>
+
+        <!-- User Info Card -->
+        <div id="user-info-card" class="card mt-4 mx-auto text-center shadow" style="max-width: 400px;">
+            <div class="card-header">
+                <h5 id="user-name" class="card-title mb-0">User Name</h5>
+            </div>
+            <div class="card-body">
+                <p id="user-details" class="card-text">Details about the recognized user will appear here.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
