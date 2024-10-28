@@ -54,10 +54,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                        <a class="nav-link" href="{{ url_for('register_bp.register') }}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('recognize') }}">Recognize</a>
+                        <a class="nav-link" href="{{ url_for('recognize_bp.recognize') }}">Recognize</a>
                     </li>
                 </ul>
             </div>
@@ -70,8 +70,8 @@
             <h1>Welcome to IdentityX</h1>
             <p class="lead">Your secure and responsive face recognition system.</p>
             <div class="d-flex justify-content-center">
-                <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg m-2">Register User</a>
-                <a href="{{ url_for('recognize') }}" class="btn btn-success btn-lg m-2">Recognize User</a>
+                <a href="{{ url_for('register_bp.register') }}" class="btn btn-primary btn-lg m-2">Register User</a>
+                <a href="{{ url_for('recognize_bp.recognize') }}" class="btn btn-success btn-lg m-2">Recognize User</a>
             </div>
         </div>
     </div>

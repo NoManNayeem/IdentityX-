@@ -43,9 +43,9 @@
             font-weight: 600;
             color: #555;
         }
-        .back-link {
-            font-size: 0.9rem;
-            color: #6c757d;
+        .video-container img {
+            border-radius: 8px;
+            border: 2px solid #ccc;
         }
     </style>
 </head>
@@ -60,10 +60,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('recognize') }}">Recognize</a>
+                        <a class="nav-link" href="{{ url_for('recognize_bp.recognize') }}">Recognize</a>
                     </li>
                 </ul>
             </div>
@@ -77,7 +74,11 @@
                 <h2>Register New User</h2>
             </div>
             <div class="card-body">
-                <form action="{{ url_for('register') }}" method="post">
+                <!-- Camera Feed for User to see -->
+                <div class="video-container text-center mb-3">
+                    <img src="{{ url_for('video_feed') }}" alt="Camera feed" class="img-fluid" width="400">
+                </div>
+                <form action="{{ url_for('register_bp.register') }}" method="post">
                     <div class="mb-4">
                         <label for="name" class="form-label">Full Name</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
@@ -85,7 +86,7 @@
                     <button type="submit" class="btn btn-primary w-100 py-2">Register</button>
                 </form>
                 <div class="text-center mt-3">
-                    <a href="{{ url_for('recognize') }}" class="btn btn-outline-secondary w-100">Go to Recognition</a>
+                    <a href="{{ url_for('recognize_bp.recognize') }}" class="btn btn-outline-secondary w-100">Go to Recognition</a>
                 </div>
             </div>
             <div class="text-center mt-3 mb-3">

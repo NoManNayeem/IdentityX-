@@ -32,4 +32,7 @@ function showUserCard(name, details) {
 // Add event listener to hide flash messages on window load
 window.addEventListener('load', () => {
     hideFlashMessages(); // Call the function to hide flash messages
+
+    // Simulate recognition event for testing
+    showUserCard("John Doe", "Recognized user details.");
 });

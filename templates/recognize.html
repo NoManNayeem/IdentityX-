@@ -20,8 +20,9 @@
         .container {
             margin-top: 5vh;
         }
-        .video-container {
-            margin-top: 20px;
+        .video-container img {
+            border-radius: 8px;
+            border: 2px solid #ccc;
         }
         .card {
             border: none;
@@ -52,10 +53,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                        <a class="nav-link" href="{{ url_for('register_bp.register') }}">Register</a>
                     </li>
                 </ul>
             </div>
@@ -66,7 +64,8 @@
     <div class="container text-center">
         <h2 class="mt-5">Live Face Recognition</h2>
         <div class="video-container">
-            <img src="{{ url_for('video_feed') }}" alt="Live video feed" class="img-fluid border border-secondary rounded" width="400">
+            <!-- Video feed of live face recognition -->
+            <img src="{{ url_for('recognize_bp.recognize_feed') }}" alt="Live video feed" class="img-fluid border border-secondary rounded" width="400">
         </div>
 
         <!-- User Info Card -->
